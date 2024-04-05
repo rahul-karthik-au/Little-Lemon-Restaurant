@@ -17,6 +17,7 @@ a{
     color:#495E57;
 }
 header{
+    padding-top: 10px;
     display:flex;
     justify-content: space-around;
 }
@@ -27,7 +28,7 @@ li{
     padding: 10px;
 }
 main{
-    padding-top: 50px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
 
@@ -95,12 +96,13 @@ section{
     height: 150px;
 }
 footer{
-    margin-left: 150px;
-    margin-right: 150px;
+    padding-top: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
     display:flex;
     justify-content: space-around;
     align-content: center;
-
+    background-color: #EDEFEE;
 }
 footer div{
     flex:1;
