@@ -3,11 +3,17 @@ import resImg from "./restauranfood.jpg";
 import food1 from "./greek salad.jpg";
 import food2 from "./desert.jpg";
 import food3 from "./bruchetta.svg";
+import { useContext } from "react";
+import { LoginContext } from "./App";
 
 let id=1;
 
 function Main(){
     const navigate = useNavigate();
+
+    const useLoginContext=useContext(LoginContext);
+    console.log(useLoginContext);
+
     const special=[{imgSrc:food1,title:"abc",price:5,description:"abcdefghijklmnopqrst"},{imgSrc:food2,title:"xyz",price:10,description:"abcdefghijklmnopqrst"},{imgSrc:food3,title:"abc",price:5,description:"abcdefghijklmnopqrst"}]
     return (
         <main>

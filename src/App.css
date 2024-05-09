@@ -95,6 +95,49 @@ section{
     width: 300px;
     height: 150px;
 }
+.form-box{
+    background-color: #495E57;
+    padding-bottom: 20px;
+}
+.form-box h1{
+    color: #F4CE14;
+    text-align: center;
+}
+form{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+form input,select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+form label{
+    color:#ffffff;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+form p{
+    color: #ffffff;
+}
+form a{
+    color: #F4CE14;
+}
+form button{
+    padding: 10px;
+    border-radius: 16px;
+    border:0px;
+    background-color: #F4CE14;
+    color:#495E57;
+    font-weight: 800;
+}
 footer{
     padding-top: 30px;
     padding-left: 150px;

@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { app } from './DB';
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore"; 
+import Footer from './Footer';
+import Header from './Header';
+
 
 export default function Register() {
     const [email,setEmail]=useState("");
@@ -19,6 +22,8 @@ export default function Register() {
     }
   return (
     <>
+    <Header />
+    <div className='form-box'>
     <h1>Register</h1>
     <form>
     <label htmlFor="email">Email</label>
@@ -29,9 +34,13 @@ export default function Register() {
     <input type="password" id="password" value={password} onChange={(e) => { 
                setPassword(e.target.value);
              }} required></input>
-    <p>Have an account? <Link to="/login">Login</Link></p>
-    <button type="submit" onClick={handleSubmit}>Login</button>
+             <div><p>Have an account? <Link to="/login">Login</Link></p><button type="submit" onClick={handleSubmit}>Sign Up</button></div>
+    
+    
+    
     </form>
+    </div>
+    <Footer />
     </>
   )
 }

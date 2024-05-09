@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "./App";
 
 function Nav(){
+    const useLoginContext=useContext(LoginContext);
+    function logout(){
+        useLoginContext.setIsLoggedIn(false)
+    }
     return(
         <nav>
         <ul>
@@ -9,7 +15,10 @@ function Nav(){
             <li><Link to="/">Menu</Link></li>
             <li><Link to="/booking">Reservation</Link></li>
             <li><Link to="/">Order Online</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li>{ useLoginContext.isLoggedIn ?
+                  <Link to='/' onClick={logout}>Log out</Link>
+                  :
+                  <Link to='/login'>Log in</Link> }</li>
         </ul>
         </nav>
     )

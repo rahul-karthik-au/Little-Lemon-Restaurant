@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { app } from './DB';
 import { getFirestore } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore"; 
+import { doc, getDoc } from "firebase/firestore";
+import { LoginContext } from './App';
+import Header from './Header';
+import Footer from './Footer';
+
 
 
 export default function Login() {
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+
+    const useLoginContext=useContext(LoginContext);
+    console.log(useLoginContext);
 
     const db=getFirestore(app);
 
@@ -20,12 +27,14 @@ export default function Login() {
         console.log(email,password);
         const docSnap = await getDoc(authTable);
         if(docSnap.exists()){
+            console.log(docSnap.data())
             if(docSnap.data().password !==password){
                 alert("wrong password")
                 setPassword("");
             }
             else{
                 navigate("/")
+                useLoginContext.setIsLoggedIn(true)
             }
         }
         else{
@@ -36,6 +45,8 @@ export default function Login() {
     }
   return (
     <>
+    <Header />
+    <div className='form-box'>
     <h1>Login</h1>
     <form>
     <label htmlFor="email">Email</label>
@@ -46,10 +57,12 @@ export default function Login() {
     <input type="password" id="password" value={password} onChange={(e) => { 
                setPassword(e.target.value);
              }} required></input>
-    <p>Don't have an account? <Link to="/register">Register</Link></p>
-    <button type="submit" onClick={handleSubmit}>Login</button>
-    </form>
+             <div><p>Don't have an account? <Link to="/register">Register</Link></p><button type="submit" onClick={handleSubmit}>Login</button></div>
     
+    
+    </form>
+    </div>
+    <Footer />
     </>
   )
 }
