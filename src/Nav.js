@@ -18,7 +18,7 @@ function Nav(){
             <li>{ useLoginContext.isLoggedIn ?
                   <Link to='/' onClick={logout}>Log out</Link>
                   :
-                  <Link to='/login'>Log in</Link> }</li>
+                  <Link to='/login'>Login</Link> }</li>
         </ul>
         </nav>
     )

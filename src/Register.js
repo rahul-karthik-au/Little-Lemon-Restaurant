@@ -1,9 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { app } from './DB';
 import { getFirestore } from "firebase/firestore";
-import { doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom'; 
+import { LoginContext } from './App';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -13,12 +15,17 @@ export default function Register() {
     const [password,setPassword]=useState("");
 
     const db=getFirestore(app);
+    const navigate = useNavigate();
+
+    const useLoginContext=useContext(LoginContext);
     
     function handleSubmit(e){
         e.preventDefault();
         console.log(email,password);
         const authTable=doc(db,"Authentication",email);
         setDoc(authTable,{password:password});
+        useLoginContext.setIsLoggedIn(true);
+        navigate('/');
     }
   return (
     <>
