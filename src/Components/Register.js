@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState,useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { app } from './DB';
+import { app } from '../util/DB';
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom'; 
-import { LoginContext } from './App';
+import { LoginContext } from '../App';
 import Footer from './Footer';
 import Header from './Header';
 

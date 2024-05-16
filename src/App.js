@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate} from "react-router-dom";
-import HomePage from "./HomePage";
-import BookingPage from "./BookingPage";
+import HomePage from "./Components/HomePage";
+import BookingPage from "./Components/BookingPage";
 import './App.css';
-import ConfirmedBooking from "./ConfirmedBooking";
-import Login from "./Login";
-import Register from "./Register";
+import ConfirmedBooking from "./Components/ConfirmedBooking";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
 import { createContext,useState } from "react";
 
 export const LoginContext=createContext();
