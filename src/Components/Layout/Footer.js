@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import logo from "./littlelemon_logo.png";
+import logo from "/Users/rahulkarthik/Project/React-App/table_reservation/src/littlelemon_logo.png";
 function Footer(){
     return(
         <footer>

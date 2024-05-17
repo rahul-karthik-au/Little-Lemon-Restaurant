@@ -1,4 +1,4 @@
-import logo from "./littlelemon_logo.png";
+import logo from "/Users/rahulkarthik/Project/React-App/table_reservation/src/littlelemon_logo.png";
 import Nav from "./Nav";
 
 

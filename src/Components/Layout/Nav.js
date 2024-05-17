@@ -6,6 +6,7 @@ function Nav(){
     const useLoginContext=useContext(LoginContext);
     function logout(){
         useLoginContext.setIsLoggedIn(false)
+        useLoginContext.setUserName("")
     }
     return(
         <nav>

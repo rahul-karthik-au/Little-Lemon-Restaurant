@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
+import { getFirestore } from "firebase/firestore";
+import { app } from '../util/DB';
+import { doc, setDoc } from "firebase/firestore";
+import { LoginContext } from '../App';
 
 function BookingForm(props){
+    const useLoginContext=useContext(LoginContext);
+
+
     const [date, setDate] = useState(""); 
     const [time, setTime] = useState(""); 
     const [guests, setGuests] = useState("");
     const [occasion,setOccasion] = useState("--select occasion--");
+
+    const db=getFirestore(app);
+    const collection=doc(db,"TableBookingHistory",useLoginContext.userName);
 
     function getIsFormValid(){
         return (date && time && (guests>0 && guests<11) && occasion !== "--select occasion--");
@@ -19,6 +29,7 @@ function BookingForm(props){
 
     function handleSubmit(e){
         console.log(date,time,guests,occasion);
+        setDoc(collection,{Date:date,Time:time,No_of_Guest:guests,Occasion:occasion});
         e.preventDefault(); 
         props.submitForm(e)
         clearForm();
@@ -26,7 +37,6 @@ function BookingForm(props){
 
     return(
         <>
-        
         <div className="form-box">
         <h1>Reservation Form</h1>
         <form>

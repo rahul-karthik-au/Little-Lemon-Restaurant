@@ -11,8 +11,9 @@ export const LoginContext=createContext();
 
 function App() {
   const [isLoggedIn,setIsLoggedIn]=useState(false)
+  const [userName,setUserName]=useState("");
   return (
-    <LoginContext.Provider value={{isLoggedIn,setIsLoggedIn}}>
+    <LoginContext.Provider value={{isLoggedIn,setIsLoggedIn,userName,setUserName}}>
       <Routes>
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/booking" element={isLoggedIn?<BookingPage />:<Navigate to='/login' />}></Route>

@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import resImg from "./restauranfood.jpg";
-import food1 from "./greek salad.jpg";
-import food2 from "./desert.jpg";
-import food3 from "./bruchetta.svg";
+import food1 from "/Users/rahulkarthik/Project/React-App/table_reservation/src/greek salad.jpg";
+import food2 from "/Users/rahulkarthik/Project/React-App/table_reservation/src/desert.jpg";
+import food3 from "/Users/rahulkarthik/Project/React-App/table_reservation/src/restauranfood.jpg";
 import { useContext } from "react";
 import { LoginContext } from "../../App";
 
@@ -25,7 +24,7 @@ function Main(){
                     <button className='btn' onClick={()=>navigate("/booking")}>Reserve Table</button>
                 </div>
                 <div>
-                    <img src={resImg} className='main-img' alt='restaurantfood' />
+                    <img src={food3} className='main-img' alt='restaurantfood' />
                 </div>
             </section>
             <section>

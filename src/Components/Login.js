@@ -35,6 +35,7 @@ export default function Login() {
             else{
                 navigate("/")
                 useLoginContext.setIsLoggedIn(true)
+                useLoginContext.setUserName(email)
             }
         }
         else{
