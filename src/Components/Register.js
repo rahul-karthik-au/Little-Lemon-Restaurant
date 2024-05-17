@@ -6,8 +6,8 @@ import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom'; 
 import { LoginContext } from '../App';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from './Layout/Footer';
+import Header from './Layout/Header';
 
 
 export default function Register() {

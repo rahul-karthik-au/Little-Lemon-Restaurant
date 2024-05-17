@@ -5,8 +5,8 @@ import { app } from '../util/DB';
 import { getFirestore } from "firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import { LoginContext } from '../App';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './Layout/Header';
+import Footer from './Layout/Footer';
 
 
 

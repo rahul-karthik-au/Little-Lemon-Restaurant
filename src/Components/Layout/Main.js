@@ -4,7 +4,7 @@ import food1 from "./greek salad.jpg";
 import food2 from "./desert.jpg";
 import food3 from "./bruchetta.svg";
 import { useContext } from "react";
-import { LoginContext } from "../App";
+import { LoginContext } from "../../App";
 
 let id=1;
 

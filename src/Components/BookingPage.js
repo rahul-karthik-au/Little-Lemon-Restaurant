@@ -1,7 +1,7 @@
 import { useReducer} from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Layout/Header";
+import Footer from "./Layout/Footer";
 import BookingForm from "./BookingForm";
 
 const updateTimes=(availabeTimes,action)=>{

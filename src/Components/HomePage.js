@@ -1,6 +1,6 @@
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
+import Header from "./Layout/Header";
+import Main from "./Layout/Main";
+import Footer from "./Layout/Footer";
 
 function HomePage(){
     return(
