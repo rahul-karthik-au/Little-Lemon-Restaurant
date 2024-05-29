@@ -86,10 +86,32 @@ function BookingForm(props){
         </form>
         </div>
         <div>
-            {bookingHistory.length !==0 ? (bookingHistory.map((history)=>{return(<div key={history.Date}><p>{history.Date}   {history.Time}   {history.No_of_Guest}  {history.Occasion}</p> </div>)})):(<p>No Booking History</p>)}
+            {bookingHistory.length !==0 ?  <BookingHistory history= {bookingHistory} />:(<p>No Booking History</p>)}
         </div>
         </>
     ) 
+}
+function BookingHistory(props){
+    return(
+        <div class="booking-table">
+            <h1>Booking History</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>No of Guest</th>
+                        <th>Occasion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.history.map((h)=>{
+                        return(<tr key={h.Date}><td>{h.Date}</td><td>{h.Time}</td><td>{h.No_of_Guest}</td><td>{h.Occasion}</td></tr>)
+                    })}
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
 export default BookingForm; 
